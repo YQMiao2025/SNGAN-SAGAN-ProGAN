@@ -1,9 +1,22 @@
-Even when using exactly the same code, GAN (Generative Adversarial Networks) models can produce different results in different runs. This is mainly due to the following factors:
+<h3>**Even when using exactly the same code, GAN (Generative Adversarial Networks) models can produce different results in different runs.**</h3>
 
-Randomness: The training process of GANs involves a significant amount of randomness. For example, the input to the generator network is typically random noise (e.g., sampled from a normal or uniform distribution), and this randomness leads to the model learning slightly different data distributions each time. Additionally, if data augmentation techniques are used, the way data is augmented can also be random.
+This is mainly due to the following factors:
 
-Weight Initialization: Neural network models need to initialize their parameters before training begins, and this initialization is usually done using some form of random strategy. Different initial parameter settings can lead the model to converge along different optimization paths, thus affecting the final results.
+Randomness: 
+The training process of GANs involves a significant amount of randomness. 
+For example, the input to the generator network is typically random noise (e.g., sampled from a normal or uniform distribution), 
+and this randomness leads to the model learning slightly different data distributions each time. 
+Additionally, if data augmentation techniques are used, the way data is augmented can also be random.
 
-Batch Order: When using batch gradient descent for training, the order of samples within each epoch can influence the learning process. Even when training on the same dataset, the way batches are divided and ordered can differ between runs, which can affect the loss function values and the quality of generated images.
+Weight Initialization: 
+Neural network models need to initialize their parameters before training begins, 
+and this initialization is usually done using some form of random strategy. 
+Different initial parameter settings can lead the model to converge along different optimization paths, thus affecting the final results.
 
-Numerical Stability: Floating-point arithmetic has inherent precision limits, and in complex deep learning models, these small differences can accumulate over many computations. Over time, these minor variations can become more pronounced and manifest in the output results
+Batch Order: 
+When using batch gradient descent for training, the order of samples within each epoch can influence the learning process. 
+Even when training on the same dataset, the way batches are divided and ordered can differ between runs, which can affect the loss function values and the quality of generated images.
+
+Numerical Stability: 
+Floating-point arithmetic has inherent precision limits, and in complex deep learning models, these small differences can accumulate over many computations. 
+Over time, these minor variations can become more pronounced and manifest in the output results.
